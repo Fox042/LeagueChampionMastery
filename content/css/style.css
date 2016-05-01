@@ -23,17 +23,13 @@ box-sizing: padding-box;
 /* link styling */
 a
 {
-    color: #1976D2; 
+    color: #B38F5C;
     text-decoration: none;
 }
 
 a:visited{}
 
-a:hover, #faq_section label:hover
-{
-    color: #3F51B5;
-    text-decoration: underline;
-}
+a:hover{}
 
 a:active{}
 
@@ -258,6 +254,8 @@ body
     max-width: 2000px;
     margin: 0 auto;
     background: #000A13;
+    overflow: hidden;
+    position: relative;
 }
 
 /* header contains a background splash of the user's champion with the highest mastery
@@ -451,7 +449,64 @@ h2
     display: none;
 }
 
+/* error text container for centering */
+.errorText
+{
+    text-align: center;
+    height: 200px;
+    width: 250px;
+    top: 0; right: 0; bottom: 0; left: 0;
+    margin: auto;
+    position: absolute;
+}
 
+.noDataText
+{
+    width: 300px;
+    top: 180px;
+}
+
+
+.errorText h1
+{
+    text-transform: uppercase;
+}
+
+/* the "try again" button */
+.errorText a
+{
+    display: block;
+    margin-top: 20px;
+    border: 3px solid #B38F5C;
+    padding: 15px;
+    background: #292116;
+    font-size: 1.2em;
+}
+
+.errorText a:hover
+{
+    border-image: linear-gradient(to top, #B38F5C, #EAD5B6) 1 stretch;
+    background: #392e1f;
+    color: #FFFFFF;
+}
+
+.errorText a:active
+{
+    border: 3px solid #856a44;
+    background: #1c170f;
+    color: #856a44;
+}
+
+/* pagination centered on mobile */
+.pagination
+{
+    text-align: center;
+}
+
+.pagination li
+{
+    display: inline-block;
+}
 
 /************ BREAKPOINTS START HERE ************/
 
@@ -506,6 +561,12 @@ h2
     .levelCell, .pointsCell, .chestCell, #championTable th:not(:nth-child(1))
     {
         text-align: center;
+    }
+    
+    /* pagination aligned left on all other devices */
+    .pagination li
+    {
+        float: left;
     }
 }
 

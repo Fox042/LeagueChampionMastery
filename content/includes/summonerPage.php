@@ -3,7 +3,7 @@
     <div class="main_content">
 
         <!-- The background image for the header will be one of the user's top three champions, randomly selected -->
-        <div id="userHeader" style="background-image: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25) ), url('content/assets/splash/<?php echo $_SESSION['champMasteryArray'][rand(0, 2)]['championKey']; ?>_0.jpg')"></div>
+        <div id="userHeader"<?php if ($_SESSION['champMasteryArray'][2]['championKey'] != null) : ?>style="background-image: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25) ), url('content/assets/splash/<?php echo $_SESSION['champMasteryArray'][rand(0, 2)]['championKey']; ?>_0.jpg')" <?php endif; ?>></div>
 
         <!-- display the avatar, username, and level of the summoner -->
         <div id="userName_c">
@@ -15,7 +15,7 @@
         <?php if (count($_SESSION['champMasteryArray']) < 3) : ?>
 
         <!-- if there are no top 3 champions available, then it's a safe bet there isn't enough data -->
-        Not enough variables. Not nearly enough variables.
+        <?php include('content/includes/noData.php'); ?>
 
         <?php else : ?>
 

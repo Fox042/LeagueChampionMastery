@@ -101,18 +101,23 @@
                 $_SESSION['champMasteryArray'][$i]['championId'] = $champMastery_data[$i]['championId'];
                 
                 $_SESSION['champMasteryArray'][$i]['championLevel'] = $champMastery_data[$i]['championLevel'];
-                
-                // styling the champion mastery points to show up as (e.g.) 12.3k, rather than the full number
-                $preChampPoints = $champMastery_data[$i]['championPoints'];
-                
-                 if ($preChampPoints > 999 && $preChampPoints <= 999999) {
-                     
-                    $championPoints = round(floatval($preChampPoints / 1000), 1) . 'k';
-                     
+               
+                // prevent styling the points for more than the top 3 - not to take up extraneous space in the session
+                if ($i < 3){
+                    // styling the champion mastery points to show up as (e.g.) 12.3k, rather than the full number
+                    $preChampPoints = $champMastery_data[$i]['championPoints'];
+
+                     if ($preChampPoints > 999 && $preChampPoints <= 999999) {
+
+                        $championPoints = round(floatval($preChampPoints / 1000), 1) . 'k';
+
+                    } else {
+
+                        $championPoints = $preChampPoints;
+
+                    }
                 } else {
-                     
-                    $championPoints = $preChampPoints;
-                     
+                    $championPoints = null;
                 }
                 
                 $_SESSION['champMasteryArray'][$i]['championPoints'] = $championPoints;
