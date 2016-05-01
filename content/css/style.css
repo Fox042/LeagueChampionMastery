@@ -1,0 +1,643 @@
+/* This bit will mean widths you set will actually include padding and borders */
+html
+{
+    box-sizing: border-box;
+    height: 100%;
+}
+*, *:before, *:after 
+{
+box-sizing: padding-box;
+}
+
+/*import font*/
+@font-face {
+    font-family: "LinBiolinum";
+    src: url('fonts/LinBiolinum_R.otf');
+}
+@font-face {
+    font-family: "LinBiolinum";
+    src: url('fonts/LinBiolinum_RB.otf');
+    font-weight: 600;
+}
+
+/* link styling */
+a
+{
+    color: #1976D2; 
+    text-decoration: none;
+}
+
+a:visited{}
+
+a:hover, #faq_section label:hover
+{
+    color: #3F51B5;
+    text-decoration: underline;
+}
+
+a:active{}
+
+h1, h2
+{
+    font-weight: 600;
+}
+
+h1
+{
+    font-size: 2em;
+}
+
+h2
+{
+    font-size: 1.5em;
+    text-align: center;
+    color: #F0E6D2;
+}
+
+h3
+{
+    font-size: 1.1em;
+    color: #F0E6D2;
+    text-align: center;
+}
+
+/*** BODY ***/
+
+body
+{
+    /* height 100% of the viewport */
+    font-size: 100%;
+    font-family: "LinBiolinum", Times New Roman, serif;
+    color: #FFFFFF;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+}
+
+/* home page container with heimerdinger background */
+#home_container 
+{
+    min-height: 480px;
+    height: 100%;
+    background-image: url('images/mobile_bg.jpg');
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position:center;
+    background-color: #1D060C;
+    position: relative;
+}
+
+#homeTitle
+{
+    padding-top: 20px;
+    text-align: center;
+    font-family: "Lato", Arial, Verdana, sans-serif;
+}
+
+#home_content
+{
+    height: 130px;
+    width: 90%;
+    max-width: 590px;
+    position: absolute;
+    margin: auto;
+    /* -62px margin top to make up for the region selector pushing everything down */
+    top: -62px; left: 0; bottom: 0; right: 0;
+}
+
+/* search bar styling */
+#searchBar
+{
+    width: 100%;
+    font-size: 1.125em;
+    border: none;
+    padding: 15px;
+    display: block;
+    
+}
+
+/* search button styling */
+#searchButton
+{
+    height: 50px;
+    width: 120px;
+    background-color: #D50624;
+    color: #FFFFFF;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.125em;
+    margin-top: 10px;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
+/* dropdown region selector styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* dropdown content hidden by default */
+.dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.24);
+}
+
+/* dropdown button */
+.dropdown_btn {
+    background-color: #3497B6;
+    color: #FFFFFF;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    right: 0;
+}
+
+/* show dropdown items on hover */
+.dropdown:hover .dropdown_content {
+    display: block;
+}
+
+/* dropdown content styling */
+.dropdown_content a {
+    text-align: center;
+    color: #000000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    padding: 15px 0;
+}
+
+.dropdown_content a:hover
+{
+    background-color: #3497B6;
+    color: #FFFFFF;
+}
+
+/****** HEADER ******/
+
+/* Header height, width, and colour */
+#header
+{
+    height: 60px;
+    line-height: 60px;
+    background-color: #000D15;
+    border-bottom: 1px solid #b38f5c;
+}
+
+/* header extends forever, but header content stays centered */
+#header_content
+{
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: url('images/header_repeater.jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 0 5px;
+}
+
+/* logo in this case is just the text "Champion Mastery" */
+#logo
+{
+    display: inline-block;
+    color: #F0E6D2;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/*** region selector in the header ***/
+#header_content .dropdown
+{
+    float: right;
+    padding: 0;
+    margin: 0;
+}
+
+/** fit the button to the header and give it a gradient background */
+#header_content .dropdown .dropdown_btn
+{
+    padding: 20px;
+    height: 60px;
+    background-color: #003944;
+    background: linear-gradient(#003944, #00181d);
+    vertical-align: top;
+    font-family: "LinBiolinum"; 
+}
+
+/*** IE 9+ - doesn't play nicely with vertical align top, so line-height has to be set instead ***/
+@media screen and (min-width:0) and (min-resolution: +72dpi) { 
+
+    #header_content .dropdown .dropdown_btn
+    {
+        line-height: 20px;
+    }
+    
+}
+
+#header_content .dropdown a
+{
+    padding: 5px 0;
+}
+
+/****** CONTENT ******/
+.container
+{
+    /* height is 100% minus the header height */
+    min-height: calc(100% - 61px);
+    max-width: 2000px;
+    margin: 0 auto;
+    background: #000A13;
+}
+
+/* header contains a background splash of the user's champion with the highest mastery
+*  actual image will be inserted into the document with php */
+#userHeader
+{
+    height: 150px;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #b38f5c;
+    /* if no image found */
+    background-image: url('../assets/splash/Aatrox_0.jpg');
+}
+
+/* the container for the user's image and name, that will be overlapped with the header */
+#userName_c
+{
+    margin-top: -36px;
+    overflow: auto;
+
+}
+
+/* the user's profile icon */
+#userImage
+{
+    width: 64px;
+    height: 64px;
+    float: left;
+    margin: 0 5px;
+    border: 1px solid #b38f5c;
+}
+
+#userName
+{
+    display: block;
+    color: #FFFFFF;
+    padding-top: 8px;
+    padding-bottom: 5px;
+    font-size: 1.6em;
+}
+
+/* padding for the main content container */
+.main_content
+{
+    padding: 5px;
+}
+
+/*** Top 3 Champions section ***/
+
+/* container for the top 3 champions */
+#top3_c
+{
+    overflow: auto;
+    padding: 10px 0;
+    background-image: linear-gradient(rgba(0,10,19,1), rgba(0,10,19,0.2)), url('images/sr.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+h2
+{
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+
+.champIcon img
+{
+    min-width: 80px;
+    min-height: 80px;
+    max-width: 100px;
+    max-height: 100px;
+    width: 100%;
+    display: inline-block;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.champIcon .champDetails
+{
+    width: 100%;
+    display: block;
+}
+
+.topChamp
+{
+    text-align: center;
+    float: left;
+    background-image: url('images/5banner.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 32%;
+    height: 180px;
+    margin: 0 0.6%;
+    padding: 10px 0;
+}
+
+.topChamp h3
+{
+    margin-bottom: 5px;
+}
+
+.hr_fade
+{
+    margin: 10px 0 5px 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent 0, #b38f5c 30%, #b38f5c 70%, transparent 100%);
+}
+
+/*** All champions section ***/
+
+#top11_c
+{
+    background-color: #001E26;
+    background: linear-gradient(#000A13 0, #001E26 40%, #000e1a 90%, #000A13 100%);
+    padding: 35px 10px 10px;
+}
+
+/* horizontal rule with arrow */
+.hr_arrow
+{
+    margin: 10px 0 -28px 0;
+    width: 100%;
+    height: 36px;
+    background: url('images/hr_arrow.png');
+    background-position: center;
+    position: relative;
+    z-index: 100;
+}
+
+/* the table holding the champions */
+#championTable
+{
+    width: 100%;
+    text-align: center;
+}
+
+#championTable th
+{
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    color: #F0E6D2;
+    font-size: 1.1em;
+}
+
+/* styling to fit images nicely */
+.championAvatar, .championLevel
+{
+    width: 60px;
+    height: 60px;
+    vertical-align: middle;
+}
+
+.championChest
+{
+    vertical-align: middle;
+}
+
+.championCell
+{
+    padding: 10px 0;
+}
+
+/* on mobiles add a bit of space to the bottom of the champ icon */
+.championAvatar
+{
+    margin-bottom: 5px;
+}
+
+/* all rows... */
+.championRow
+{
+    border-bottom: 1px solid #B28E5C;
+}
+
+/* ...except the last one in the page will have a border at the bottom to act as a separator */
+.championRow:nth-last-child(1), .championRow:nth-child(8n)
+{
+    border: none;
+}
+
+/* vertically align the text in these table cells to the middle */
+.levelCell, .pointsCell
+{
+    vertical-align: middle;
+}
+
+#upArrow
+{
+    display: none;
+}
+
+
+
+/************ BREAKPOINTS START HERE ************/
+
+/******* TABLET *******/
+
+@media screen and (min-width: 830px){
+    
+    h2
+    {
+        text-align: left;
+    }
+    
+    /* homepage */
+    #home_container {
+        background-image: url('images/tablet_bg.jpg');
+    }
+    
+    /* make header title a bit bigger */
+    #logo
+    {
+        font-size: 1.8em;
+    }
+    
+    /* MORE snazzy splash art */
+    #userHeader
+    {
+        height: 200px;
+    }
+    
+    /* switch from text centering and put champion names inline with their icons */
+    .championAvatar
+    {
+        margin: 0;
+        margin-right: 10px;
+    }
+    
+    .championAvatar + p
+    {
+        display: inline-block;
+    }
+    
+    .championCell
+    {
+        padding: 20px 0;
+    }
+    
+    #championTable
+    {
+        text-align: left;
+    }
+    
+    .levelCell, .pointsCell, .chestCell, #championTable th:not(:nth-child(1))
+    {
+        text-align: center;
+    }
+}
+
+/****** DESKTOP ******/
+@media screen and (min-width: 1000px){ 
+    
+    /* homepage */
+    #homeTitle
+    {
+        padding-top: 60px;
+        font-size: 3.6em;
+    }  
+    #home_container 
+    {
+        background-image: url('images/desktop_bg.jpg');
+    }
+    
+    /* make header title a bit bigger */
+    #logo
+    {
+        font-size: 2em;
+    }
+    
+    /* add a bit of whitespace on larger devices */
+    .main_content
+    {
+        width: 90%;
+        margin: auto;
+        max-width: 1200px;
+    }
+    
+    /* increase profile icon size so it still looks reasonable on a desktop */
+    #userImage
+    {
+        width: 110px;
+        height: 110px;
+        margin: 0 10px;
+    }
+    
+    /* EVEN MORE snazzy splash art */
+    #userHeader
+    {
+        height: 300px;
+    }
+    
+    /* readjust username and user level positioning because the user icon is larger */
+    #userName_c
+    {
+        margin-top: -56px;
+    }
+    #userName
+    {
+        padding-top: 20px;
+        font-size: 2em;
+    }
+    #userLevel
+    {
+        font-size: 1.2em;
+    }
+    
+    #header_content
+    {
+        width: 90%;
+    }
+    
+    /* make champion icons in the table slightly bigger */
+    .championAvatar
+    {
+        width: 80px;
+        height: 80px;
+        margin-left: 20px;
+    }
+    
+    .championAvatar + p
+    {
+        font-size: 1.3em;
+    }
+    
+    /* arrow to scroll back up the page */
+    #upArrow
+    {
+        width: 34px;
+        height: 32px;
+        background-image: url(images/up_arrow.png);
+        opacity: 0.6;
+        background-repeat: no-repeat;
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 5px;
+    }
+    
+    #upArrow:hover
+    {
+        opacity: 1;
+    }
+    
+/****** TV ******/
+@media screen and (min-width: 1900px){ 
+    
+    /* homepage */
+    #home_container 
+    {
+        background-image: url('images/tv_bg.jpg');
+    }
+    
+    /* show default profile icon size so it still looks reasonable on a TV */
+    #userImage
+    {
+        width: 128px;
+        height: 128px;
+    }
+    
+    /* readjust because the user icon is larger */
+    #userName_c
+    {
+        margin-top: -66px;
+    }
+    #userName
+    {
+        padding-top: 32px;
+    }
+        #userLevel
+    {
+        font-size: 1.6em;
+    }
+    
+    #upArrow
+    {
+        right: 25px;
+    }
+    
+    
+}
