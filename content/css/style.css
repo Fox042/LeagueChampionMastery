@@ -141,6 +141,7 @@ body
 /* dropdown content hidden by default */
 .dropdown_content {
     display: none;
+    z-index: 100;
     position: absolute;
     background-color: #f9f9f9;
     width: 100%;
@@ -452,18 +453,14 @@ h2
 /* error text container for centering */
 .errorText
 {
+    margin-top: 80px;
+    width: 100%;
     text-align: center;
-    height: 200px;
-    width: 250px;
-    top: 0; right: 0; bottom: 0; left: 0;
-    margin: auto;
-    position: absolute;
 }
 
 .noDataText
 {
-    width: 300px;
-    top: 180px;
+    margin-top: 10px;
 }
 
 
@@ -475,7 +472,7 @@ h2
 /* the "try again" button */
 .errorText a
 {
-    display: block;
+    display: inline-block;
     margin-top: 20px;
     border: 3px solid #B38F5C;
     padding: 15px;
