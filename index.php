@@ -27,7 +27,7 @@
             
             <!-- search form -->
             <form action="summonerPage.php" method="get">
-                <input type="search" id="searchBar" name="summoner" placeholder="<?php echo $searchBarPlaceholder ?>" maxlength="16">
+                <input aria-label="Search for Summoner" type="search" id="searchBar" name="summoner" placeholder="<?php echo $searchBarPlaceholder ?>" maxlength="16">
                 <input type="submit" id="searchButton" value="Search" >
             </form>
             
