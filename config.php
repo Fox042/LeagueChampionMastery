@@ -7,8 +7,8 @@
     session_start();
 
     //Enable error messages for development
-    ini_set("display_errors", "on");
-    error_reporting(E_ALL);
+    ini_set("display_errors", "off");
+    //error_reporting(E_ALL);
 
     //Set timezone
     date_default_timezone_set('Europe/London');
