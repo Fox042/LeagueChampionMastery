@@ -24,6 +24,11 @@ The data displayed on the summoner page:
 * A table of all the champions the user has mastery points for. Displays:
 Name, mastery level, points, whether the user has been granted a chest with that champion. The table is displayed in descending order of points, with jQuery pagination.
 
+***
+
+**You will have to add an API key in "config.php"**
+
+***
 **Ideas for the future**
 * MYSQL database instead of sessions
 * Progress bar displaying how far the user has to go to unlock the next mastery level for a specific champion
