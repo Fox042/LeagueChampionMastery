@@ -1,8 +1,17 @@
-# LeagueChampionMastery
+LeagueChampionMastery
+=====================
+
+Overview
+--------
+
+![Homepage, containing a search bar and Heimerdinger's splash art](screenshots/homepage.jpg)
 
 A champion mastery lookup for EUW, EUNE and NA. I picked these three regions because they are predominantly English speaking, at least in terms of League sites, and since I'm at Uni at the moment I don't have time to add localisation as well!
 
 The design of the website is Hextech-y, to fit in with recent / upcoming League changes. It's responsive!
+
+![Website displayed on a tablet, smartphone, and computer](screenshots/showcase.jpg)
+
 Tested on the following resolutions:
 * 2560 x 1440
 * 1920 x 1080
