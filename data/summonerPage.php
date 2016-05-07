@@ -16,6 +16,12 @@
 
     /*** FUNCTIONS ***/
 
+    // get the response header from the server
+    function get_http_response_code($theURL) {
+        $headers = get_headers($theURL);
+        return substr($headers[0], 9, 3);
+    }
+
     // get summoner name, id, profile icon, level
     function getSummoner($name, $region){
         
@@ -40,8 +46,12 @@
             
         } else {
             
-            header("HTTP/1.0 404 Not Found");
-            include('content/includes/noSummoner.php');
+            if(intval(get_http_response_code($summonerLookupUrl)) == 404){
+                header("HTTP/1.0 404 Not Found");
+                include('content/includes/noSummoner.php');
+            } else if (in_array(intval(get_http_response_code($summonerLookupUrl)), array(403, 429,500, 503), true)){
+                include('content/includes/serverError.php');
+            }
             
         }
         
