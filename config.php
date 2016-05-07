@@ -14,7 +14,7 @@
     date_default_timezone_set('Europe/London');
 
     // define the API key
-    define('API_KEY', "nope");
+    define('API_KEY', "key goes here");
 
     /****** CHECK OR SET THE REGION ******/
 

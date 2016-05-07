@@ -33,11 +33,19 @@ The data displayed on the summoner page:
 * A table of all the champions the user has mastery points for. Displays:
 Name, mastery level, points, whether the user has been granted a chest with that champion. The table is displayed in descending order of points, with jQuery pagination.
 
-***
-
-**You will have to add an API key in "config.php"**
-
-***
 **Ideas for the future**
 * MYSQL database instead of sessions
 * Progress bar displaying how far the user has to go to unlock the next mastery level for a specific champion
+
+To run this on your machine:
+----------------------------
+**Requirements:**
+* You will need a local server environment, as this runs on PHP. I personally use MAMP, although there are alternatives such as XAMPP.
+* "allow_url_fopen" should be enabled in your php.ini file. This is enabled by default in MAMP, and is needed to get the contents of URLs (aka API queries).
+
+* You will need a Riot API key. See the ![Riot Developer's website](https://developer.riotgames.com/docs/api-keys) for more details.
+
+Once you have the files copied to your local server environment (in MAMP, this is a folder called htdocs), **you will have to copy your API key into "config.php"** on the line which should be marked as follows:
+
+    // define the API key
+    define('API_KEY', "key goes here");
