@@ -10,7 +10,7 @@ A champion mastery lookup for EUW, EUNE and NA. I picked these three regions bec
 
 The design of the website is Hextech-y, to fit in with recent / upcoming League changes. It's responsive!
 
-![Website displayed on a tablet, smartphone, and computer](screenshots/showcase.jpg)
+![Website displayed on a tablet, smartphone, and computer](screenshots/showcase.png)
 
 Tested on the following resolutions:
 * 2560 x 1440
