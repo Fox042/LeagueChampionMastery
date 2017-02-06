@@ -1,6 +1,6 @@
-LeagueChampionMastery ([Demo](http://championmastery.net16.net/))
+LeagueChampionMastery
 =====================
-The demo is on a free host, so I can't guarantee it will run smoothly / not be blocked by internet filters. The best option is to run it yourself!
+**Outdated** - newer champions, icons and mastery levels will be missing. Otherwise functional.
 
 Overview
 --------
